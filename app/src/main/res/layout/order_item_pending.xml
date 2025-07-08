@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/orderItemStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/warm_grey_two"
+        tools:text="2 pending items"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:layout_marginTop="@dimen/space_20"
+        android:layout_marginLeft="12dp"
+        />
+
+    <TextView
+        android:id="@+id/orderItemTracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/greyish_two"
+        android:text="@string/tracking_number_will_be_updated_on_dispatch"
+        app:layout_constraintLeft_toLeftOf="@id/orderItemStatus"
+        app:layout_constraintTop_toBottomOf="@id/orderItemStatus"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

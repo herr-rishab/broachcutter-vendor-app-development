@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/diagonal_red_blue_gradient"
+    tools:context=".screens.login.relog_otp.RelogOTPFragment">
+
+    <include layout="@layout/login_cutter_bg" />
+
+    <TextView
+        android:id="@+id/phoneNumberTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_the_broachcutter_dealer_app"
+        android:textSize="25sp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glTop"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        />
+
+    <TextView
+        android:id="@+id/otpDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintRight_toRightOf="@id/phoneNumberTitle"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberTitle"
+        android:layout_marginTop="@dimen/space_15"
+        tools:text="We’ve sent you an OTP on your registered mobile number ending in 8901. This helps us makes sure your account is safe."
+        />
+
+    <TextView
+        android:id="@+id/otpHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/enter_otp"
+        app:layout_constraintLeft_toLeftOf="@id/otpDescription"
+        app:layout_constraintTop_toBottomOf="@id/glMiddle"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        />
+
+    <EditText
+        android:id="@+id/otp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintRight_toRightOf="@id/phoneNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/otpHint"
+        android:textColor="@color/white"
+        android:inputType="phone"
+        android:textSize="16sp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:hint="@string/otp_hint"
+        android:textColorHint="@color/white_50"
+        android:digits="0123456789"
+        android:importantForAutofill="no"
+        android:imeOptions="actionDone"
+        />
+
+    <ProgressBar
+        android:id="@+id/waitingOtpProgress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/otp"
+        app:layout_constraintTop_toBottomOf="@id/otp"
+        />
+
+    <TextView
+        android:id="@+id/waitingForOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="end"
+        android:text="@string/waiting_for_otp"
+        app:layout_constraintLeft_toRightOf="@id/waitingOtpProgress"
+        app:layout_constraintTop_toTopOf="@id/waitingOtpProgress"
+        app:layout_constraintBottom_toBottomOf="@id/waitingOtpProgress"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:layout_marginLeft="@dimen/space_10"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        android:text="@string/confirm_otp"
+        style="@style/WhiteButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glBottom"
+        app:layout_constraintVertical_bias="1"
+        />
+
+    <TextView
+        android:id="@+id/retryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="end"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        tools:text="Didn’t recieve an OTP? Try again in 8 seconds."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:padding="@dimen/space_5"
+        />
+
+    <ProgressBar
+        android:layout_marginTop="@dimen/_14sdp"
+        android:visibility="visible"
+        android:id="@+id/retryProgress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:id="@+id/glMiddle"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

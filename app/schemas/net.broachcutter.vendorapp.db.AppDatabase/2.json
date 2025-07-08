@@ -1,0 +1,334 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "58d072975405d15c72d85d4ef39b4400",
+    "entities": [
+      {
+        "tableName": "CartItem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`part_number_primary` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `unitPrice` TEXT, `selectedPaymentTerm` TEXT, `paymentTerms` TEXT, `partNumber` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT, `productType` INTEGER, `imageUrl` TEXT, `taxRate` REAL NOT NULL, `cutterType` INTEGER, `depthOfCut` INTEGER, `diameter` REAL, `cutterMaterial` INTEGER, `pilotPinType` TEXT, `associatedMachines` TEXT, PRIMARY KEY(`part_number_primary`))",
+        "fields": [
+          {
+            "fieldPath": "partNumber",
+            "columnName": "part_number_primary",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitPrice",
+            "columnName": "unitPrice",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "selectedPaymentTerm",
+            "columnName": "selectedPaymentTerm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "paymentTerms",
+            "columnName": "paymentTerms",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.partNumber",
+            "columnName": "partNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product.name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product.description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.productType",
+            "columnName": "productType",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.imageUrl",
+            "columnName": "imageUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.taxRate",
+            "columnName": "taxRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product.cutterType",
+            "columnName": "cutterType",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.depthOfCut",
+            "columnName": "depthOfCut",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.diameter",
+            "columnName": "diameter",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.cutterMaterial",
+            "columnName": "cutterMaterial",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.pilotPinType",
+            "columnName": "pilotPinType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product.associatedMachines",
+            "columnName": "associatedMachines",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "part_number_primary"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Product",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`partNumber` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT, `productType` INTEGER, `imageUrl` TEXT, `taxRate` REAL NOT NULL, `cutterType` INTEGER, `depthOfCut` INTEGER, `diameter` REAL, `cutterMaterial` INTEGER, `pilotPinType` TEXT, `associatedMachines` TEXT, PRIMARY KEY(`partNumber`))",
+        "fields": [
+          {
+            "fieldPath": "partNumber",
+            "columnName": "partNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "productType",
+            "columnName": "productType",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageUrl",
+            "columnName": "imageUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "taxRate",
+            "columnName": "taxRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cutterType",
+            "columnName": "cutterType",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "depthOfCut",
+            "columnName": "depthOfCut",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "diameter",
+            "columnName": "diameter",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cutterMaterial",
+            "columnName": "cutterMaterial",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pilotPinType",
+            "columnName": "pilotPinType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "associatedMachines",
+            "columnName": "associatedMachines",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "partNumber"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Order",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`orderNumber` TEXT NOT NULL, `orderDate` INTEGER NOT NULL, `orderItems` TEXT, `subtotal` REAL, `taxItems` TEXT, `total` REAL, PRIMARY KEY(`orderNumber`))",
+        "fields": [
+          {
+            "fieldPath": "orderNumber",
+            "columnName": "orderNumber",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderDate",
+            "columnName": "orderDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderItems",
+            "columnName": "orderItems",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subtotal",
+            "columnName": "subtotal",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "taxItems",
+            "columnName": "taxItems",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "orderNumber"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UpdatedOrder",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`orderId` TEXT NOT NULL, `orderDate` INTEGER NOT NULL, `subtotal` REAL, `product` TEXT NOT NULL, `confirmedDate` INTEGER, `orderStatus` INTEGER, `taxItems` TEXT, `total` REAL, `dispatchDate` INTEGER, PRIMARY KEY(`orderId`))",
+        "fields": [
+          {
+            "fieldPath": "orderId",
+            "columnName": "orderId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderDate",
+            "columnName": "orderDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtotal",
+            "columnName": "subtotal",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "product",
+            "columnName": "product",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confirmedDate",
+            "columnName": "confirmedDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "orderStatus",
+            "columnName": "orderStatus",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "taxItems",
+            "columnName": "taxItems",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dispatchDate",
+            "columnName": "dispatchDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "orderId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '58d072975405d15c72d85d4ef39b4400')"
+    ]
+  }
+}

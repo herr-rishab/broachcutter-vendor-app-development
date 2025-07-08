@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:padding="@dimen/space_15">
+
+    <ImageView
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_black_24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/accessories_common_product_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_10"
+        android:fontFamily="@font/proxima_nova_alt_bold"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/accessories_common_product_part_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close_button"
+        tool:text="Coolant attachment for twist drilling" />
+
+    <TextView
+        android:id="@+id/accessories_common_product_part_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_25"
+        android:textSize="14sp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        app:layout_constraintTop_toBottomOf="@id/accessories_common_product_title"
+        app:layout_constraintBottom_toTopOf="@+id/add_to_container_container"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tool:text="Part Number: 990002" />
+
+    <LinearLayout
+        android:id="@+id/add_to_container_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <net.broachcutter.vendorapp.views.ElegantNumberButton
+            android:id="@+id/product_number_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"
+            android:layout_marginRight="@dimen/space_15"
+            app:textSize="8sp"
+            app:backGroundColor="@color/navy"
+            tool:ignore="SmallSp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_add_to_cart"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="48dp"
+            android:text="@string/add_to_cart_caps"
+            style="@style/MaterialButton"
+            android:backgroundTint="@color/white"
+            app:cornerRadius="@dimen/card_corner_radius"
+            app:strokeColor="@color/twilight_blue"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_cart"
+            app:iconPadding="@dimen/space_5"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            android:textColor="@color/twilight_blue"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

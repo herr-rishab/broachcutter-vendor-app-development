@@ -1,0 +1,33 @@
+#Disabled till we have CI working as expected. Need to stop this from triggering for PRs.
+name: Android Feature Branch CI
+
+on:
+  push:
+    branches:
+      #      - '*'
+      - '!development'
+      - '!staging'
+      - '!master'
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Create keystore.properties
+        run: echo "storePassword=${{ secrets.STORE_PASSWORD }}\nkeyPassword=${{ secrets.KEY_PASSWORD }}\nkeyAlias=${{ secrets.KEY_ALIAS }}\nstoreFile=vendorapp_keystore\n" > keystore.properties
+      - name: Create vendorapp_keystore
+        run: touch app/vendorapp_keystore
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+      - name: Unit tests
+        run: bash ./gradlew test --no-daemon --stacktrace
+      - name: Detekt
+        run: bash ./gradlew detekt --no-daemon --stacktrace
+      - name: Spotless
+        run: bash ./gradlew spotlessCheck --no-daemon --stacktrace

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white_two"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true"
+    tools:showIn="@layout/fragment_account_info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/space_15"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/name"
+            android:fontFamily="@font/nunito_regular" />
+
+        <TextView
+            android:id="@+id/dealerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            tools:text="Supreme Dealer - Chengalpattu"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/e_mail_address"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/dealerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            tools:text="pronoy.dutt@dealer.com"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="3dp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="@string/mobile_number"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/dealerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            tools:text="+91 982891 20199"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/credit_limit"
+            android:fontFamily="@font/nunito_regular"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/dealerCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            tools:text="1,00,000 of 2,20,000 left"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="3dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

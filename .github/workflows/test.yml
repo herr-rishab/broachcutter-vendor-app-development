@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  push:
+    tags:
+    - t*.*.*
+jobs:
+  bundle:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set env
+        run: |
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          echo "RELEASE_SEMVER=$(echo $env.RELEASE_VERSION | cut -d'-' -f 1)" >> $GITHUB_ENV
+          echo "${{ env.RELEASE_VERSION }}"
+          echo "${{ env.RELEASE_SEMVER }}"
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName3
+        with:
+          tagRegex: "t(?<semver>[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2})(?:-.*)"
+      - name: Some other step # Output usage example
+        run: |
+          echo "${{ steps.tagName.outputs.tag }}"
+          echo "${{ steps.tagName3.outputs.semver }}"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"

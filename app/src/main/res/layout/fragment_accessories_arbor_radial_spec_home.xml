@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16.5dp"
+    tools:context=".screens.accessories.arbor_radial_spec.home.ArborRadialSpecHomeFragment">
+
+    <TextView
+        android:id="@+id/adapter_spec_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="@string/broachcutter_arbors_for_radial_drilling"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        android:paddingHorizontal="@dimen/space_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/adapter_spec_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginTop="2.5dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/you_can_search_for_a_cutter_by"
+        android:textColor="@color/warm_grey"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adapter_spec_title" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adapter_spec_subtitle"
+        android:layout_marginTop="@dimen/space_10"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@style/NavigationTabTextAppeareance" />
+
+    <net.broachcutter.vendorapp.views.NonSwipeableViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sliding_tabs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

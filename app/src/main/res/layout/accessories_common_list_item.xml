@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/accessories_common_root"
+    android:layout_width="@dimen/_194sdp"
+    android:layout_height="@dimen/accessories_card_height"
+    android:layout_marginTop="@dimen/space_5"
+    android:layout_marginRight="@dimen/space_10"
+    android:layout_marginBottom="@dimen/space_10"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/grey_round_rect_border"
+        android:padding="@dimen/space_10">
+
+        <TextView
+            android:id="@+id/accessories_common_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/space_10"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/black_two"
+            android:textSize="@dimen/_16ssp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMaxTextSize="@dimen/_16ssp"
+            app:autoSizeMinTextSize="@dimen/_10ssp"
+            app:autoSizeStepGranularity="@dimen/_2ssp"
+            app:layout_constraintBottom_toTopOf="@+id/accessories_common_part_number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
+            android:maxLines="3"
+            android:gravity="bottom"
+            tool:text="Coolant attachment for twist drilling" />
+
+        <TextView
+            android:id="@+id/accessories_common_part_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_10"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@+id/accessories_common_add_to_card"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tool:text="Part Number: 990002" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accessories_common_add_to_card"
+            style="@style/RedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            android:text="@string/add_to_cart_caps"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:backgroundTint="@drawable/search_button_selector"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

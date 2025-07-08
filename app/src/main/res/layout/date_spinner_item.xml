@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="35dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="0dp"
+    app:cardPreventCornerOverlap="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/spinner_background">
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/proxima_nova_semibold"
+            tools:text="December"
+            android:paddingLeft="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <View
+            android:id="@+id/dropdownBg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@id/dateText"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/grey_right_rounded_rectangle"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_dropdown_arrow"
+            app:layout_constraintLeft_toLeftOf="@id/dropdownBg"
+            app:layout_constraintRight_toRightOf="@id/dropdownBg"
+            app:layout_constraintTop_toTopOf="@id/dropdownBg"
+            app:layout_constraintBottom_toBottomOf="@id/dropdownBg"
+            android:contentDescription="@string/dropdown" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

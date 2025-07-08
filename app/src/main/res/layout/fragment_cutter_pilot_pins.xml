@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    tools:context=".screens.cutters.pilot_pins.CutterPilotPinsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/diameterLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/diameter_mm"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+                android:id="@+id/diameterGroup"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/x"
+                android:layout_marginRight="@dimen/space_5"
+                app:layout_constraintTop_toBottomOf="@id/diameterLabel">
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="4.74" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="6.35" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="7.98" />
+            </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+            <TextView
+                android:id="@+id/x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="@color/black"
+                app:layout_constraintRight_toLeftOf="@id/depthOfCutEntry"
+                app:layout_constraintTop_toTopOf="@id/depthOfCutEntry"
+                app:layout_constraintBottom_toBottomOf="@id/depthOfCutEntry"
+                android:layout_marginRight="@dimen/space_5"
+                />
+
+            <EditText
+                android:id="@+id/depthOfCutEntry"
+                android:layout_width="70dp"
+                android:layout_height="38dp"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:paddingLeft="@dimen/space_10"
+                android:imeOptions="actionSearch"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/white_rounded_rectangle5"
+                android:layout_marginTop="4dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:text="@string/mm"
+                android:fontFamily="@font/proxima_nova_semibold"
+                app:layout_constraintRight_toRightOf="@id/depthOfCutEntry"
+                app:layout_constraintTop_toTopOf="@id/depthOfCutEntry"
+                app:layout_constraintBottom_toBottomOf="@id/depthOfCutEntry"
+                android:layout_marginRight="@dimen/space_10"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search"
+        style="@style/MaterialButton"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_20"
+        android:fontFamily="@font/proxima_nova_semibold"
+        app:backgroundTint="@drawable/search_button_selector"
+        android:text="@string/search"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:cornerRadius="5dp"
+        />
+
+</LinearLayout>

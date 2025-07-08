@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.my_order_history.MyOrderHistoryFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="My Orders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btn_order_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/order_status_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:defaultFocusHighlightEnabled="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorColor="@color/twilight_blue"
+                app:tabIndicatorHeight="@dimen/_3sdp"
+                app:tabMode="scrollable"
+                app:tabPaddingEnd="@dimen/_20sdp"
+                app:tabPaddingStart="@dimen/_20sdp"
+                app:tabRippleColor="@null"
+                app:tabTextAppearance="@style/TabTextAppearance"
+                app:tabSelectedTextColor="@color/twilight_blue"
+                app:tabTextColor="@color/unselected_tab_text_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.12"
+                android:background="@color/tab_strip_bg_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_4sdp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/marine"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/monthOfOrderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:text="@string/month_of_order"
+        android:textColor="@color/warm_grey_two"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <Spinner
+        android:id="@+id/spinnerMonth"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/spinner_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/monthOfOrderLabel"
+        app:layout_constraintTop_toBottomOf="@id/monthOfOrderLabel" />
+
+    <TextView
+        android:id="@+id/yearOfOrderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_10"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:text="@string/year_of_order"
+        android:textColor="@color/warm_grey_two"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/monthOfOrderLabel"
+        app:layout_constraintLeft_toRightOf="@id/spinnerMonth"
+        app:layout_constraintTop_toTopOf="@+id/monthOfOrderLabel" />
+
+    <Spinner
+        android:id="@+id/spinnerYear"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/spinner_background"
+        app:layout_constraintLeft_toLeftOf="@id/yearOfOrderLabel"
+        app:layout_constraintTop_toBottomOf="@id/yearOfOrderLabel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_order_search"
+        style="@style/RedButton"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:paddingHorizontal="5dp"
+        android:text="@string/go"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerYear"
+        app:layout_constraintStart_toEndOf="@id/spinnerYear"
+        app:layout_constraintTop_toTopOf="@id/spinnerYear" />
+
+    <com.valartech.loadinglayout.LoadingLayout
+        android:id="@+id/my_order_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:default_state="complete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:tag="@string/ll_complete"
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/order_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:tag="@string/ll_loading">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/white" />
+
+        </LinearLayout>
+    </com.valartech.loadinglayout.LoadingLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

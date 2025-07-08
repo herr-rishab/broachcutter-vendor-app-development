@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingEnd="@dimen/_15sdp"
+    tools:context=".screens.solid_drills.solid_drill.SolidDrillFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/solid_drill_diameter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:labelFor="@id/numberEntry"
+                android:text="@string/solid_drill_diameter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/typeOfDrillBitsDiameterSpinner"
+                style="@style/ExposedDropDown"
+                app:boxBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/solid_drill_diameter"
+                app:layout_constraintTop_toBottomOf="@id/solid_drill_diameter_label">
+
+                <AutoCompleteTextView
+                    android:id="@+id/drill_bits_diameter_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    tools:text="@string/drill_bits_diameter" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/shank_diameter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/nunito_regular"
+                android:labelFor="@id/numberEntry"
+                android:text="@string/shank_diameter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typeOfDrillBitsDiameterSpinner" />
+
+            <TextView
+                android:id="@+id/shank_diameter_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:text="@string/solid_drills_with_19_05mm_weldon_shank"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shank_diameter_label" />
+
+            <TextView
+                android:id="@+id/depth_cut_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/nunito_regular"
+                android:labelFor="@id/numberEntry"
+                android:text="@string/depth_of_cut_mm"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shank_diameter_field" />
+
+            <TextView
+                android:id="@+id/depth_cut_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:text="@string/doc_35mm"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/depth_cut_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search"
+        style="@style/RedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/space_20"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:text="@string/search_for_solid_drill" />
+
+
+</LinearLayout>

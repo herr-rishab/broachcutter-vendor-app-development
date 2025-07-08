@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:elevation="10dp"
+    tools:showIn="@layout/fragment_cart">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/orderAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_fileName="placing_order.json"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/orderLoadingText"
+        android:layout_marginHorizontal="@dimen/space_5"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.4"
+        />
+
+    <TextView
+        android:id="@+id/orderLoadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order_processing"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        android:paddingHorizontal="@dimen/space_10"
+        android:gravity="center"
+        android:paddingVertical="@dimen/space_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderAnimation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

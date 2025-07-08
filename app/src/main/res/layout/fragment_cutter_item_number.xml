@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    tools:context=".screens.cutters.part_number.CutterPartNumberFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="5dp"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cutterPilotPinLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:labelFor="@id/numberEntry"
+                android:text="@string/item_number_of_the_cutter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/numberEntry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@drawable/white_rounded_rectangle5"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:hint="@string/enter_number_here"
+                android:imeOptions="actionSearch"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cutterPilotPinLabel"
+                tools:text="2000199902" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cutterSearch"
+        style="@style/RedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_20"
+        android:text="@string/search_for_cutter"
+        />
+
+    <com.valartech.loadinglayout.LoadingLayout
+        android:id="@+id/cutterLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_20"
+        android:minHeight="@dimen/product_card_height"
+        android:visibility="gone">
+        <!--loading-->
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+        <!--complete-->
+        <net.broachcutter.vendorapp.views.ProductCardView
+            android:id="@+id/cutterCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/product_card_height"
+            app:cardBackgroundColor="@color/marine" />
+        <!--empty-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/noResultsImage"
+                android:layout_width="154dp"
+                android:layout_height="154dp"
+                android:src="@drawable/no_results"
+                app:layout_constraintBottom_toTopOf="@id/noResultsTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/noResultsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/no_results_title"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/noResultsDescription"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noResultsImage" />
+
+            <TextView
+                android:id="@+id/noResultsDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:gravity="center_horizontal"
+                android:text="@string/no_results_desc"
+                android:textColor="@color/greyish_two"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noResultsTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.valartech.loadinglayout.LoadingLayout>
+
+</LinearLayout>

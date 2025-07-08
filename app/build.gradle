@@ -1,0 +1,362 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'com.android.application'
+    id 'com.google.android.gms.oss-licenses-plugin' version '0.10.6'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-allopen'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
+    id "com.diffplug.spotless" version "5.12.2"
+    id "io.sentry.android.gradle" version "4.10.0"
+}
+
+apply from: "$project.rootDir/spotless.gradle"
+
+static def getDate() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd")
+    return df.format(new Date())
+}
+
+static def getAppVersionCode() {
+    return 62
+}
+
+static def getAppVersionName() {
+    return "2.0.2"
+}
+
+allOpen {
+    // allows mocking for classes w/o directly opening them for release builds
+    annotation 'net.broachcutter.vendorapp.util.OpenClass'
+}
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    signingConfigs {
+        releaseConfig {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    compileSdk 34
+    defaultConfig {
+        applicationId "net.broachcutter.vendorapp"
+        minSdk 23
+        targetSdk 34
+        versionCode getAppVersionCode()
+        versionName getAppVersionName()
+        testInstrumentationRunner "net.broachcutter.vendorapp.testutil.CustomTestRunner"
+        //for firebase auth
+        resConfigs 'en'
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString(),
+                             "room.incremental"   : "true"]
+            }
+        }
+    }
+    buildTypes {
+        debug {
+//            firebaseCrashlytics {
+//                // If you don't need crash reporting for your debug build,
+//                // you can speed up your build by disabling mapping file uploading.
+//                mappingFileUploadEnabled false
+//            }
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+    }
+    flavorDimensions "api"
+    productFlavors {
+        mock {
+            manifestPlaceholders = [sentryEnvironment: "mock"]
+            applicationId "net.broachcutter.dealer.mock"
+            dimension "api"
+            versionName getAppVersionName() + "-mock"
+            //isn't using for mock
+            buildConfigField "String", 'API_ENDPOINT', '"https://api.broachcutter.net:8601/broachapi-test/"'
+            buildConfigField "String", 'VALARTECH_API_ENDPOINT', '"https://api.broachcutter.net:3760/dealer/"'
+            buildConfigField "String", "FIREBASE_APP_NAME", '"Broachcutter dealer - mock"'
+            buildConfigField "String", "FIREBASE_APPLICATION_ID", '"1:220610884047:android:99a0d60b03fd710e78e2ba"'
+            buildConfigField "String", "FIREBASE_PROJECT_ID", '"broachcutter-vendor-app"'
+            // This is the WebKey from firebase console.
+            buildConfigField "String", "FIREBASE_API_KEY", '"AIzaSyAcXaRSqjUW3mpXdyoEwUPdtvPYDV-J1xI"'
+            buildConfigField "String", "ONESIGNAL_APP_ID", '"ac3f8502-fa71-4087-9cb6-faf69ca33a66"'
+            buildConfigField "String", "SENTRY_DSN", '"https://1a2929458cec4d4ea96a3ccdb9ac96ce@o303556.ingest.sentry.io/5730615"'
+        }
+        dev {
+            manifestPlaceholders = [sentryEnvironment: "development"]
+            applicationId "net.broachcutter.vendorapp"
+            dimension "api"
+            versionName getAppVersionName() + "-dev"
+            buildConfigField "String", 'API_ENDPOINT', '"https://api.broachcutter.net:8601/broachapi-test/"'
+            buildConfigField "String", 'VALARTECH_API_ENDPOINT', '"https://api.broachcutter.net:3760/dealer/"'
+            buildConfigField "String", "FIREBASE_APP_NAME", '"Broachcutter dealer - dev"'
+            buildConfigField "String", "FIREBASE_APPLICATION_ID", '"1:220610884047:android:afb75c47c5a438e1"'
+            buildConfigField "String", "FIREBASE_PROJECT_ID", '"broachcutter-vendor-app"'
+            // This is the WebKey from firebase console.
+            buildConfigField "String", "FIREBASE_API_KEY", '"AIzaSyAcXaRSqjUW3mpXdyoEwUPdtvPYDV-J1xI"'
+            buildConfigField "String", "ONESIGNAL_APP_ID", '"ac3f8502-fa71-4087-9cb6-faf69ca33a66"'
+            buildConfigField "String", "SENTRY_DSN", '"https://1a2929458cec4d4ea96a3ccdb9ac96ce@o303556.ingest.sentry.io/5730615"'
+        }
+        prod {
+            manifestPlaceholders = [sentryEnvironment: "production"]
+            applicationId "net.broachcutter.dealer"
+            dimension "api"
+            versionName getAppVersionName()
+            buildConfigField "String", 'API_ENDPOINT', '"https://api.broachcutter.net:8601/broachapi-live/"'
+            buildConfigField "String", 'VALARTECH_API_ENDPOINT', '"https://api.broachcutter.net:3759/dealer/"'
+            buildConfigField "String", "FIREBASE_APP_NAME", '"Broachcutter dealer"'
+            buildConfigField "String", "FIREBASE_APPLICATION_ID", '"1:704447610659:android:3cfc784f32fdc2f3979696"'
+            buildConfigField "String", "FIREBASE_PROJECT_ID", '"broachcutter-dealer"'
+            // This is the WebKey from firebase console.
+            buildConfigField "String", "FIREBASE_API_KEY", '"AIzaSyAMwNZ30pYN8SHmX7Fj6mT2tL-uF8p8OSI"'
+            buildConfigField "String", "ONESIGNAL_APP_ID", '"2c5f44c7-a570-411e-888b-6414c699d506"'
+            buildConfigField "String", "SENTRY_DSN", '"https://1a2929458cec4d4ea96a3ccdb9ac96ce@o303556.ingest.sentry.io/5730615"'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        // Adds exported schema location as test app assets.
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+        freeCompilerArgs = ["-XXLanguage:+InlineClasses"]
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def newApkName = "Broachcutter_Vendor_" + getDate() +
+                    "_" + getAppVersionName() +
+                    "_" + variant.productFlavors[0].name +
+                    "_" + variant.buildType.name + ".apk"
+            output.outputFileName = newApkName
+        }
+    }
+    sentry {
+        includeProguardMapping = true
+        autoUploadProguardMapping = true
+
+        // List the build types that should be ignored
+        ignoredBuildTypes = ["debug"]
+
+        // List the build flavors that should be ignored
+        ignoredFlavors = ["mock", "dev"]
+
+        // List the build variant that should be ignored
+        ignoredVariants = ["devDebug", "devRelease", "mockDebug", "mockRelease"]
+    }
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.14"
+    }
+    namespace 'net.broachcutter.vendorapp'
+}
+
+configurations.all {
+    // Check for updates every build for SNAPSHOTs
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+//debugHunterExt {
+//    runVariant = 'DEBUG'  //'DEBUG', 'RELEASE', 'ALWAYS', 'NEVER', The 'ALWAYS' is default value
+//}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+    testImplementation "org.amshove.kluent:kluent-android:1.42"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
+    testImplementation 'androidx.test:core:1.6.1' //Robolectric environment
+    testImplementation 'org.robolectric:robolectric:4.4'
+    testImplementation 'org.threeten:threetenbp:1.5.0'
+    androidTestImplementation "org.amshove.kluent:kluent-android:1.42"
+    testImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutines_version"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutines_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+//    testImplementation "org.mockito:mockito-inline:2.8.47"
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    testImplementation 'org.mockito:mockito-core:3.9.0'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:runner:1.6.1'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    implementation "org.jetbrains.anko:anko-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk15-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-design-coroutines:$anko_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlin_coroutines_version"
+
+    //android
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "androidx.exifinterface:exifinterface:1.3.7"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "com.google.android.material:material:1.12.0"
+    implementation "androidx.browser:browser:1.8.0"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation "androidx.core:core-ktx:1.13.1"
+    implementation 'androidx.work:work-runtime:2.9.0'
+
+    //ui
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'com.github.ceryle:RadioRealButton:v2.1.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.duanhong169:drawabletoolbox:1.0.6'
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+//    implementation platform('com.google.firebase:firebase-bom:33.1.2') {
+//        exclude group: 'com.google.android.gms', module: 'play-services-ads-identifier'
+//    }
+    implementation('com.google.firebase:firebase-auth')
+    implementation('com.google.firebase:firebase-config')
+    implementation('com.google.firebase:firebase-analytics')
+    implementation('com.google.firebase:firebase-crashlytics')
+    implementation('com.google.firebase:firebase-perf')
+
+
+    //retrofit
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp_version}"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+
+    //rx
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    //dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //utilities
+    implementation 'ru.terrakok.cicerone:cicerone:5.1.1'
+//    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //google play
+    implementation "com.google.android.gms:play-services-oss-licenses:${play_services_oss_licenses}"
+//    implementation "com.google.android.play:core:${play_core_version}"
+//    implementation 'com.google.android.play:asset-delivery:2.2.2'
+//    implementation 'com.google.android.play:asset-delivery-ktx:2.2.2'
+//    implementation 'com.google.android.play:feature-delivery:2.1.0'
+//    implementation 'com.google.android.play:feature-delivery-ktx:2.1.0'
+    implementation 'com.google.android.play:review:2.0.1'
+    implementation 'com.google.android.play:review-ktx:2.0.1'
+//    implementation 'com.google.android.play:app-update:2.1.0'
+//    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+//    implementation "com.google.android.play:core-ktx:1.8.1"
+
+    // Groupie
+    implementation "com.xwray:groupie:${groupie_version}"
+    implementation "com.xwray:groupie-kotlin-android-extensions:${groupie_version}"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:$groupie_version"
+
+    implementation "com.jakewharton.threetenabp:threetenabp:1.3.0"
+//    implementation "com.instabug.library:instabug:${instabug_version}"
+//    implementation "com.instabug.library:instabug-with-okhttp-interceptor:${instabug_version}"
+//    implementation 'com.quinn.hunter:hunter-debug-library:0.9.6'
+    implementation "com.github.valartech:android-commons:${valartech_commons}"
+    implementation "com.snakydesign.livedataextensions:lives:${livedataextensions}"
+
+//    sizing library
+    implementation "com.intuit.sdp:sdp-android:${sizing_library}"
+    implementation "com.intuit.ssp:ssp-android:${sizing_library}"
+
+    //sentry library
+    implementation platform("io.sentry:sentry-bom:${sentry_version}") //import bom
+    implementation "io.sentry:sentry-android"
+    /**
+     * We are not including the sentry android timber dependency since this
+     * causes the default sentry tree to be auto-added to the app. We've instead
+     * copied over the timber sources to this app.
+     */
+    implementation "io.sentry:sentry-android-timber"
+    implementation "io.sentry:sentry-android-okhttp"
+    implementation "io.sentry:sentry-android-fragment"
+    implementation "com.jakewharton.timber:timber:5.0.1"
+
+    //valartech loading library
+    implementation "com.valartech:loading-layout:${loading_library_version}"
+
+    //onesignal library for push notification
+    implementation 'com.onesignal:OneSignal:5.1.18'
+
+    //compose
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.4'
+    implementation "androidx.activity:activity-compose:1.9.1"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.material:material-icons-core:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    //dot indicator for recyclerview
+    implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.0.6"
+
+}
+
+
+

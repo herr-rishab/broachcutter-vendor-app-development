@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_20" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCouponApplied"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/water_blue"
+        android:padding="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOffer"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_offer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:id="@+id/tvCouponApplied"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:letterSpacing="0.01"
+            android:padding="@dimen/_4sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivOffer"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Coupon code ‘DIWALI10’ applied! " />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <net.broachcutter.vendorapp.views.PricingFooter
+        android:id="@+id/pricingFooterView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_white_gradient"
+        android:paddingLeft="@dimen/space_30"
+        android:paddingRight="@dimen/space_30">
+
+    </net.broachcutter.vendorapp.views.PricingFooter>
+</LinearLayout>

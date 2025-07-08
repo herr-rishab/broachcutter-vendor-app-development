@@ -1,0 +1,121 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/diagonal_red_blue_gradient"
+    tools:context=".screens.login.main.LoginFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/login_cutter_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_title"
+            android:textSize="32sp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
+            android:layout_marginTop="60dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:text="@string/login_subtitle"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white_50"
+            android:hint="@string/login_email_label"
+            style="@style/LoginInputLayout"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginTop="24dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                style="@style/LoginInputTextbox"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInputLayout"
+            style="@style/LoginInputLayout"
+            android:textColorHint="@color/white_50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_marginLeft="@dimen/space_10"
+            app:passwordToggleEnabled="true"
+            android:hint="@string/login_password_label"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="24dp"
+                style="@style/LoginInputTextbox"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgotPasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:fontFamily="@font/proxima_nova_thin"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="@string/login_forgot_password"
+            android:layout_gravity="end"
+            android:layout_marginRight="@dimen/space_10"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            android:layout_gravity="center"
+            android:text="@string/sign_in_caps"
+            style="@style/WhiteButton"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

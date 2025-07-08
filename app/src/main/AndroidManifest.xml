@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <application
+        android:name=".DealerApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/BroachcutterTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:theme,android:supportsRtl">
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="false" />
+
+        <activity
+            android:name=".screens.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".screens.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".screens.splash.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screens.search.SearchActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <!-- For more properties visit https://github.com/getsentry/sentry-java/blob/main/sentry-samples/sentry-samples-android/src/main/AndroidManifest.xml -->
+        <meta-data
+            android:name="io.sentry.auto-init"
+            android:value="false" />
+        <meta-data
+            android:name="io.sentry.attach-screenshot"
+            android:value="true" />
+        <meta-data
+            android:name="com.onesignal.suppressLaunchURLs"
+            android:value="true" />
+    </application>
+
+</manifest>

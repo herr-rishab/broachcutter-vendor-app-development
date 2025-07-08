@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/marine"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:contentPadding="@dimen/_8sdp"
+    >
+
+    <com.valartech.loadinglayout.LoadingLayout
+        android:id="@+id/productDetailLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/white"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:id="@+id/cardDetailContent"
+                layout="@layout/product_card_content" />
+            <ImageView
+                android:id="@+id/dialogClose"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_close_white_24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="@id/cardDetailContent"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingBottom="@dimen/space_10"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.valartech.loadinglayout.LoadingLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

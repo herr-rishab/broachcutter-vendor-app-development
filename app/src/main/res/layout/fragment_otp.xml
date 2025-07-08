@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/diagonal_red_blue_gradient"
+    tools:context=".screens.login.phone_number.LinkPhoneNumberFragment">
+
+    <include layout="@layout/login_cutter_bg" />
+
+    <TextView
+        android:id="@+id/phoneNumberTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_the_broachcutter_dealer_app"
+        android:textSize="25sp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        />
+
+    <TextView
+        android:id="@+id/phoneNumberDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintRight_toRightOf="@id/phoneNumberTitle"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberTitle"
+        android:layout_marginTop="@dimen/space_15"
+        android:text="@string/phone_number_linking_help"
+        />
+
+    <TextView
+        android:id="@+id/phoneNumberHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/your_mobile_number"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberDescription"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberDescription"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        />
+
+    <TextView
+        android:id="@+id/phoneNumberPrefix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberText"
+        app:layout_constraintBaseline_toBaselineOf="@id/phoneNumberText"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:text="@string/indian_phone_prefix"
+        />
+
+    <TextView
+        android:id="@+id/phoneNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberHint"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        tools:hint="91829 22812"
+        android:textColorHint="@color/white"
+        android:paddingLeft="30dp"
+        android:paddingTop="@dimen/space_10"
+        android:drawableRight="@drawable/ic_edit_white_16dp"
+        android:drawablePadding="@dimen/space_5"
+        />
+
+    <TextView
+        android:id="@+id/otpHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/enter_otp"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberDescription"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberText"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        />
+
+    <EditText
+        android:id="@+id/otp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintRight_toRightOf="@id/phoneNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/otpHint"
+        android:textColor="@color/white"
+        android:inputType="phone"
+        android:imeOptions="actionDone"
+        android:textSize="16sp"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:hint="@string/otp_hint"
+        android:textColorHint="@color/white_50"
+        android:digits="0123456789"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        android:text="@string/confirm_otp"
+        style="@style/WhiteButton"
+        android:layout_width="220dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glBottom"
+        app:layout_constraintVertical_bias="1"
+        />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        android:id="@+id/retryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="end"
+        android:layout_marginTop="@dimen/_12sdp"
+        tools:text="Didn’t recieve an OTP? Try again in 8 seconds."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:padding="@dimen/space_5"
+        />
+
+    <ProgressBar
+        android:layout_marginTop="@dimen/_14sdp"
+        android:visibility="visible"
+        android:id="@+id/retryProgress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

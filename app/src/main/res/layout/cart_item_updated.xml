@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/space_10"
+    android:layout_marginTop="@dimen/space_15"
+    android:layout_marginRight="@dimen/space_10"
+    app:cardBackgroundColor="@color/black_two"
+    app:cardCornerRadius="@dimen/_4sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="@dimen/_10sdp"
+            android:id="@+id/img_delete_product"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginStart="@dimen/space_10"
+            app:layout_constraintEnd_toStartOf="@+id/img_delete_product"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Light Weight Rail Drilling Machine, Model: RATTLER,Make : BROACHCUTTER® Suitable for52kg&amp;60kg Rails" />
+
+        <TextView
+            android:id="@+id/tv_article_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.4"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="Article Number: 2000199902" />
+
+        <net.broachcutter.vendorapp.views.ElegantNumberButton
+            android:id="@+id/cart_qty_button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_39sdp"
+            tools:ignore="SmallSp"
+            app:backGroundColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_article_number"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginStart="@dimen/space_10"
+            />
+
+        <TextView
+            android:layout_marginEnd="@dimen/space_10"
+            android:id="@+id/tv_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:gravity="end"
+            app:layout_constraintStart_toEndOf="@id/cart_qty_button"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/img_delete_product"
+            app:layout_constraintTop_toTopOf="@+id/cart_qty_button"
+            tools:text="Rs. 52,015" />
+
+        <TextView
+            app:layout_constraintStart_toEndOf="@id/cart_qty_button"
+            android:id="@+id/tv_discount_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:gravity="end"
+            android:maxLines="2"
+            android:textColor="@color/pinkish_grey"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_amount"
+            app:layout_constraintTop_toBottomOf="@+id/tv_amount"
+            tools:text="(Rs. 5,300 discount applied)" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:background="@color/reddy_brown_Two"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_discount_type"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/payment_terms"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_39sdp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:background="@drawable/rounded_white_bg"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:layout_marginEnd="@dimen/space_10"
+                android:layout_marginBottom="@dimen/space_10">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinnerPaymentTerm"
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/proxima_nova_alt_regular"
+                    android:layout_height="@dimen/_39sdp"
+                    android:layout_weight="9.5"
+                    android:editable="false"
+                    android:cursorVisible="false"
+                    android:textColor="@color/black"
+                    android:focusable="false"
+                    android:textSize="@dimen/_16ssp"
+                    android:paddingStart="@dimen/space_10"
+                    tools:text="Please select"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_payment_term_dropdown"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_dropdown_arrow"
+                    app:tint="@color/black"
+                    android:layout_marginEnd="@dimen/space_10" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

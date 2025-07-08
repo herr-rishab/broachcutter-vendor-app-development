@@ -1,0 +1,149 @@
+{
+  "project_info": {
+    "project_number": "220610884047",
+    "firebase_url": "https://broachcutter-vendor-app.firebaseio.com",
+    "project_id": "broachcutter-vendor-app",
+    "storage_bucket": "broachcutter-vendor-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220610884047:android:99a0d60b03fd710e78e2ba",
+        "android_client_info": {
+          "package_name": "net.broachcutter.dealer.mock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220610884047-6mcc41j4um9mae7r7r94kuc1j1uvikpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.dealer.mock",
+            "certificate_hash": "08b04ec6b5fb25ba1ca6306cce03544ba871ec9a"
+          }
+        },
+        {
+          "client_id": "220610884047-70u7fc5vci6ogg5n2q7qfmo4phmelg5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.dealer.mock",
+            "certificate_hash": "8dd6a13f837e18424b45a735357b3d7d5c12ba52"
+          }
+        },
+        {
+          "client_id": "220610884047-esvitm4u4kcpi1s1qqtv1rfp6lhkq4ul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.dealer.mock",
+            "certificate_hash": "bdf36c4146a03c6916a25f660b27755f1d76dc04"
+          }
+        },
+        {
+          "client_id": "220610884047-iogbfn8qt2p75g4re65grq785m46l58c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.dealer.mock",
+            "certificate_hash": "e8f5f521a09dd5c5c7f517e09e4d40d3d4803841"
+          }
+        },
+        {
+          "client_id": "220610884047-t2qa3n9d1ugdvsub96no0bdg32811rj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.dealer.mock",
+            "certificate_hash": "2a8c0cfe5f912827b8302978da2a4bad95c34b05"
+          }
+        },
+        {
+          "client_id": "220610884047-mpsvggtio3oe5pemj73urpfbvm2d3qbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4pFu4OmWZYC1sLuTKtCrUC4G_wyNNtpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220610884047-mpsvggtio3oe5pemj73urpfbvm2d3qbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220610884047:android:afb75c47c5a438e1",
+        "android_client_info": {
+          "package_name": "net.broachcutter.vendorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220610884047-3u4oc6vlnituu5lgok4apoale5315tio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.vendorapp",
+            "certificate_hash": "2a8c0cfe5f912827b8302978da2a4bad95c34b05"
+          }
+        },
+        {
+          "client_id": "220610884047-b89accjotl38uvgm7dluo6c2e0h7d1k8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.vendorapp",
+            "certificate_hash": "e8f5f521a09dd5c5c7f517e09e4d40d3d4803841"
+          }
+        },
+        {
+          "client_id": "220610884047-e1e2u9cbel4664hb1nbbm7171rqom5ah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.vendorapp",
+            "certificate_hash": "8dd6a13f837e18424b45a735357b3d7d5c12ba52"
+          }
+        },
+        {
+          "client_id": "220610884047-n3l31piicp5besg52pvgrdqm7nhd87et.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.vendorapp",
+            "certificate_hash": "08b04ec6b5fb25ba1ca6306cce03544ba871ec9a"
+          }
+        },
+        {
+          "client_id": "220610884047-satb7p4h3ov6hh3jclmk7dken0g314sc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.broachcutter.vendorapp",
+            "certificate_hash": "bdf36c4146a03c6916a25f660b27755f1d76dc04"
+          }
+        },
+        {
+          "client_id": "220610884047-mpsvggtio3oe5pemj73urpfbvm2d3qbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4pFu4OmWZYC1sLuTKtCrUC4G_wyNNtpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220610884047-mpsvggtio3oe5pemj73urpfbvm2d3qbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

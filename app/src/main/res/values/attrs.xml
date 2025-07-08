@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textColor" format="color" />
+    <attr name="textSize" format="dimension" />
+
+    <declare-styleable name="RoundedTextButton">
+        <attr name="bg_color" format="enum">
+            <enum name="blue" value="0" />
+            <enum name="red" value="1" />
+        </attr>
+        <attr name="text" format="string" localization="suggested" />
+        <attr name="textSize" />
+        <attr name="letterSpacing" format="float" />
+        <attr name="textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingLayout">
+        <attr name="default_state" format="enum">
+            <enum name="loading" value="1" />
+            <enum name="loading_overlay" value="2" />
+            <enum name="complete" value="3" />
+            <enum name="empty" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ElegantNumberButton">
+
+        <attr name="backGroundColor" format="color" />
+        <attr name="initialNumber" format="integer" />
+        <attr name="finalNumber" format="integer" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+        <attr name="backgroundDrawable" format="reference" />
+    </declare-styleable>
+</resources>

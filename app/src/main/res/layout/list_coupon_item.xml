@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_11sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/warm_grey"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHeader"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/burnt_red"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_coupon_details_banner" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCouponId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivHeader"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="DIWALI10" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_22sdp"
+                android:background="@color/deep_brown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivHeader" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/view"
+                app:layout_constraintStart_toStartOf="@id/view"
+                app:layout_constraintTop_toTopOf="@id/view"
+                tools:text="Valid till 27/11/2021 or till stocks last" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShortDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                tools:text="When you purchase 2 CUB Machines, get 2 18x50 tct annualar cutters on 15% discount…" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnApplyAndAdd"
+                style="@style/RedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="@color/marine"
+                android:text="@string/apply_amp_add_items_to_cart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvViewDetails"
+                app:layout_constraintTop_toBottomOf="@+id/tvShortDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/view_details"
+                android:textColor="@color/twilight_blue"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnApplyAndAdd"
+                app:layout_constraintEnd_toStartOf="@id/btnApplyAndAdd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnApplyAndAdd" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

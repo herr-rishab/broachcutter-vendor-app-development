@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="71dp"
+    android:layout_height="37dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="0dp"
+    app:cardPreventCornerOverlap="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/proxima_nova_semibold"
+            tools:text="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <View
+            android:id="@+id/dropdownBg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@id/quantity"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/red_right_rounded_rectangle"
+            />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_dropdown_arrow"
+            app:layout_constraintLeft_toLeftOf="@id/dropdownBg"
+            app:layout_constraintRight_toRightOf="@id/dropdownBg"
+            app:layout_constraintTop_toTopOf="@id/dropdownBg"
+            app:layout_constraintBottom_toBottomOf="@id/dropdownBg"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

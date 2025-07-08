@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeContent"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/homeHeaderBg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white_three"
+        app:layout_constraintHeight_percent="0.112"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_centre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginRight="@dimen/space_15"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:autoSizeMaxTextSize="@dimen/_16ssp"
+        app:autoSizeMinTextSize="@dimen/_12ssp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/homeHeaderBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/homeOrderHistory"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Mark Engineering Tools Pvt. Ltd." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeOrderHistory"
+        style="@style/RedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/space_15"
+        android:backgroundTint="@color/marine"
+        android:text="@string/order_history"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/homeHeaderBg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/homeSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_15"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:text="@string/home_subtitle"
+        android:textColor="@color/greyish_brown_five"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeHeaderBg" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOfferScheme"
+        android:layout_width="0dp"
+        app:cardBackgroundColor="@color/water_blue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="4dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/homeSubtitle"
+        app:layout_constraintHeight_percent="0.10"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginRight="@dimen/space_15"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_offer_scheme_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/offer_and_scheme"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_offer_scheme_nav"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/annular_cutters_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_marginRight="@dimen/space_15"
+        app:cardBackgroundColor="@color/marine"
+        app:cardCornerRadius="4dp"
+        app:contentPaddingLeft="13dp"
+        app:layout_constraintHeight_percent="0.141"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvOfferScheme">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cuttersTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/annular_cutters"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/cuttersSubtitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/cuttersSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_thin"
+                android:text="@string/tct_and_hss_cutters"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/cuttersTitle"
+                app:layout_constraintTop_toBottomOf="@+id/cuttersTitle" />
+
+            <ImageView
+                android:id="@+id/tctBg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingTop="3dp"
+                android:paddingEnd="@dimen/space_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_tct"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/tctBgSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingTop="@dimen/space_10"
+                android:paddingRight="3dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_tct_small"
+                app:layout_constraintRight_toLeftOf="@id/tctBg"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/machinesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_marginRight="@dimen/space_15"
+        android:paddingLeft="13dp"
+        app:cardBackgroundColor="@color/burnt_red"
+        app:cardCornerRadius="4dp"
+        app:contentPaddingLeft="13dp"
+        app:layout_constraintHeight_percent="0.141"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/annular_cutters_Layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/machinesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/magnetic_drilling_machines"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/machinesSubtitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/machinesSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_thin"
+                android:text="@string/cub_super_trident_titan_and_more"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/machinesTitle" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home_machine_bg2"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAccessoriesAndSpares"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_10"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/machinesLayout">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sparesLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_15"
+            android:layout_marginEnd="@dimen/space_5"
+            android:layout_weight="5"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/greyish_brown_six"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/accessoriesLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/accessoriesLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/sparesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/spares"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/sparesSubtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/sparesSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/spares_for_magnetic_drilling_machines"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sparesTitle" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_5"
+                    android:src="@drawable/home_spares_bg2"
+                    android:visibility="invisible"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/accessoriesLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginEnd="@dimen/space_15"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/black_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sparesLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/accessoriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/accessories"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/accessoriesSubtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/accessoriesSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/pilot_pins_model_wise_accessories_and_more"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/accessoriesTitle" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_5"
+                    android:src="@drawable/home_spares_bg2"
+                    android:visibility="invisible"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clAccessoriesAndSpares">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/solid_drills_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_15"
+            android:layout_marginEnd="@dimen/space_5"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/brownish_grey_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintEnd_toStartOf="@id/holesaws_layout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/solid_drills_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/solid_drills"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/solid_drills_sub_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/solid_drills_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/and_drill_bits"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/solid_drills_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_5"
+                    android:src="@drawable/home_spares_bg2"
+                    android:visibility="invisible"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/holesaws_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginEnd="@dimen/space_15"
+            android:layout_weight="5"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/bg_grey"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/solid_drills_layout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/holesaws_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/holesaws"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/holesaws_sub_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/holesaws_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/tct_holesaws"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/holesaws_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/space_5"
+                    android:paddingEnd="@dimen/space_10"
+                    android:paddingBottom="@dimen/space_5"
+                    android:src="@drawable/home_spares_bg2"
+                    android:visibility="invisible"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

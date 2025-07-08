@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <Blacklist/>
+  <Whitelist>
+    <ID>ComplexMethod:MainActivity.kt$MainActivity$onCreate</ID>
+    <ID>EmptyFunctionBlock:CartRecyclerViewItems.kt$SpacingItem${ }</ID>
+    <ID>EmptyFunctionBlock:OTPViewModel.kt$OTPViewModel.&lt;no name provided>${ }</ID>
+    <ID>EmptyFunctionBlock:OrderRecyclerViewItems.kt$NoCompletedOrdersItem${}</ID>
+    <ID>EmptyFunctionBlock:OrderRecyclerViewItems.kt$TitleItem${}</ID>
+    <ID>EmptyFunctionBlock:SparesFragment.kt$SparesFragment.&lt;no name provided>${ }</ID>
+    <ID>EmptyFunctionBlock:SpinnerInteractionListener.kt$SpinnerInteractionListener${}</ID>
+    <ID>ForbiddenComment:AppException.kt$AppException.Companion$// TODO: 05/01/18 convert to map of int - string, so that we can use string passed in by server</ID>
+    <ID>LongMethod:CartRecyclerViewItems.kt$CartLineItem$applyExpandedState</ID>
+    <ID>LongMethod:OrderSummaryCardView.kt$OrderSummaryCardView$getDescText</ID>
+    <ID>MagicNumber:AppException.kt$AppException$401</ID>
+    <ID>MagicNumber:AppException.kt$AppException$403</ID>
+    <ID>MagicNumber:AppException.kt$AppException$500</ID>
+    <ID>MagicNumber:AppException.kt$AppException$502</ID>
+    <ID>MagicNumber:BaseRoomCartRepository.kt$BaseRoomCartRepository$100</ID>
+    <ID>MagicNumber:CartRecyclerViewItems.kt$CartLineItem$15</ID>
+    <ID>MagicNumber:CartRecyclerViewItems.kt$CartLineItem$3</ID>
+    <ID>MagicNumber:ElegantNumberButton.kt$ElegantNumberButton$13f</ID>
+    <ID>MagicNumber:HomeFragment.kt$HomeFragment$15</ID>
+    <ID>MagicNumber:HomeFragment.kt$HomeFragment$8</ID>
+    <ID>MagicNumber:NetworkModule.kt$NetworkModule$10</ID>
+    <ID>MagicNumber:NetworkModule.kt$NetworkModule$1024</ID>
+    <ID>MagicNumber:NetworkModule.kt$NetworkModule$1500</ID>
+    <ID>MagicNumber:OrderRecyclerViewItems.kt$PendingOrdersItem$15</ID>
+    <ID>MagicNumber:OrderRecyclerViewItems.kt$PendingOrdersItem$8</ID>
+    <ID>MatchingDeclarationName:NetworkCallDSL.kt$CallHandler&lt;RESPONSE : Any, DATA : Any></ID>
+    <ID>NestedBlockDepth:BaseRoomCartRepository.kt$BaseRoomCartRepository$fetchTaxAndTotals</ID>
+    <ID>NestedBlockDepth:Order.kt$Order$isPendingOrder</ID>
+    <ID>NestedBlockDepth:SearchActivity.kt$SearchActivity$updateSearchResults</ID>
+    <ID>NewLineAtEndOfFile:AdapterSpecItemNumberFragment.kt$net.broachcutter.vendorapp.screens.accessories.adapter_spec.item_number.AdapterSpecItemNumberFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:AnnularCuttingItemNumberFragment.kt$net.broachcutter.vendorapp.screens.annular.item_number.AnnularCuttingItemNumberFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborExtensionHomeFragment.kt$net.broachcutter.vendorapp.screens.accessories.arbor_extensions.home.ArborExtensionHomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborExtensionItemNumberFragment.kt$net.broachcutter.vendorapp.screens.accessories.arbor_extensions.item_number.ArborExtensionItemNumberFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborExtensionSpecificationFragment.kt$net.broachcutter.vendorapp.screens.accessories.arbor_extensions.specification.ArborExtensionSpecificationFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborExtensionTabAdapter.kt$net.broachcutter.vendorapp.screens.accessories.arbor_extensions.home.ArborExtensionTabAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborRadialSpecHomeFragment.kt$net.broachcutter.vendorapp.screens.accessories.arbor_radial_spec.home.ArborRadialSpecHomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ArborRadialSpecSpecificationFragment.kt$net.broachcutter.vendorapp.screens.accessories.arbor_radial_spec.specification.ArborRadialSpecSpecificationFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:Constants.kt$net.broachcutter.vendorapp.util.Constants.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinLinkingTree.kt$net.broachcutter.vendorapp.util.timber.KotlinLinkingTree.kt</ID>
+    <ID>NewLineAtEndOfFile:LinkingDebugTree.kt$net.broachcutter.vendorapp.util.timber.LinkingDebugTree.kt</ID>
+    <ID>NewLineAtEndOfFile:TestingTree.kt$net.broachcutter.vendorapp.util.timber.TestingTree.kt</ID>
+    <ID>TooGenericExceptionCaught:BaseRoomCartRepository.kt$BaseRoomCartRepository$ex: Exception</ID>
+    <ID>TooGenericExceptionCaught:LoginRepository.kt$LoginRepository$ex: Exception</ID>
+    <ID>TooGenericExceptionCaught:NetworkCallDSL.kt$CallHandler$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:NonSwipeableViewPager.kt$NonSwipeableViewPager$e: Exception</ID>
+    <ID>TooManyFunctions:CutterSpecificationsFragment.kt$CutterSpecificationsFragment$CutterSpecificationsFragment</ID>
+    <ID>TooManyFunctions:HomeFragment.kt$HomeFragment$HomeFragment</ID>
+    <ID>TooManyFunctions:ProductRepository.kt$ProductRepository$ProductRepository</ID>
+  </Whitelist>
+</SmellBaseline>

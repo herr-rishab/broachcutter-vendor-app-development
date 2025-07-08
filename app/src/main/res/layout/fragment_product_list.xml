@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context="net.broachcutter.vendorapp.screens.product_list.ProductListFragment">
+
+        <TextView
+            android:id="@+id/resultsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_20"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="@string/magnetic_drilling_machines"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.valartech.loadinglayout.LoadingLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Progress -->
+            <include layout="@layout/progressbar_layout" />
+
+            <!-- Complete -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="@string/ll_complete"
+                tools:listitem="@layout/list_item_machine_product_list" />
+
+            <!-- Empty -->
+            <include
+                android:id="@+id/noSearchResults"
+                layout="@layout/search_no_results" />
+        </com.valartech.loadinglayout.LoadingLayout>
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

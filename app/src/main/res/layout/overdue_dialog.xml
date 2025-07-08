@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    android:paddingTop="@dimen/space_30"
+    android:paddingBottom="@dimen/space_15">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:text="@string/overdue_payment"
+        android:fontFamily="@font/proxima_nova_alt_bold"
+        android:layout_marginBottom="@dimen/space_30"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="@string/overdue_payment_detail"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:layout_marginBottom="25dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/burnt_red"
+        android:text="@string/close_caps"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:fontFamily="@font/proxima_nova_alt_bold"
+        android:textSize="12sp"
+        android:paddingLeft="@dimen/space_30"
+        android:paddingRight="@dimen/space_30"
+        app:cornerRadius="5dp"
+        />
+</LinearLayout>

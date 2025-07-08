@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/space_15"
+    android:layout_marginTop="@dimen/space_15"
+    android:layout_marginRight="@dimen/space_15"
+    android:animateLayoutChanges="true"
+    app:cardBackgroundColor="@color/black_two"
+    app:cardCornerRadius="7.5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cartItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginRight="@dimen/space_20"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            android:textColor="@color/white"
+            app:autoSizeMaxTextSize="25sp"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeStepGranularity="@dimen/_2ssp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@id/price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cartActionIcon"
+            tools:text="UNIVERSAL ADAPTER - Designed to allow use of BroachCutter® Annular Cutters of 19.05mm weldon" />
+
+        <ImageView
+            android:id="@+id/cartActionIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_edit_white_24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/discount"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Rs. 1,32,540" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:gravity="end"
+            android:textColor="@color/pinkish_grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/quantityBottomBarrier"
+            app:layout_constraintRight_toRightOf="@id/price"
+            tools:text="(Discount of Rs. 13,210 applied)" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/quantityGuideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="83dp" />
+
+        <TextView
+            android:id="@+id/quantityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/footerBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/quantityGuideline"
+            tools:text="Quantity: 3 Nos." />
+
+        <TextView
+            android:id="@+id/quantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginBottom="3.5dp"
+            android:text="@string/quantity"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <Spinner
+            android:id="@+id/quantitySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_15"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quantityLabel"
+            android:background="@null"
+            />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/quantityBottomBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierAllowsGoneWidgets="false"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="quantitySpinner,quantityText" />
+
+        <TextView
+            android:id="@+id/paymentTermsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_15"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/payment_terms"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quantitySpinner" />
+
+        <Spinner
+            android:id="@+id/paymentTermsSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_15"
+            app:layout_constraintBottom_toTopOf="@id/footerBackground"
+            app:layout_constraintTop_toBottomOf="@id/paymentTermsLabel"
+            android:background="@null"
+            />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/expandedGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="quantityLabel,quantitySpinner,
+             paymentTermsLabel, paymentTermsSpinner" />
+
+        <View
+            android:id="@+id/footerBackground"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:background="@drawable/dark_red_bottom_rounded_rectangle75" />
+
+        <TextView
+            android:id="@+id/footerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/footerBackground"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/footerBackground"
+            android:paddingLeft="@dimen/space_10"
+            android:paddingRight="@dimen/space_10"
+            tools:text="Payment terms: P30 | 30% discount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

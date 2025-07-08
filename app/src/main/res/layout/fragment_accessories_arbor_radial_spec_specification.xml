@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    tools:context=".screens.cutters.specifications.CutterSpecificationsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/morse_taper_mt_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/morse_taper_mt"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/morse_taper_mt_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="3.5dp"
+                android:background="@null"
+                app:layout_constraintTop_toBottomOf="@id/morse_taper_mt_label" />
+
+            <TextView
+                android:id="@+id/shank_diameter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_15"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/shank_diameter"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morse_taper_mt_spinner" />
+
+            <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+                android:id="@+id/shank_diameter_group"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shank_diameter_label">
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc_19_05_mm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_19_05" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc_31_75_mm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_31_75" />
+            </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+            <TextView
+                android:id="@+id/depth_of_cut_mm_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_15"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/depth_of_cut_mm"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shank_diameter_group" />
+
+            <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+                android:id="@+id/depth_of_cut_mm_group"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/depth_of_cut_mm_label">
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc_50_mm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_50" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc_75_mm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_75" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc_100_mm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_100" />
+            </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search"
+        style="@style/RedButton"
+        android:layout_gravity="center_horizontal"
+        android:enabled="false"
+        android:text="@string/search_for_arbor"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginTop="@dimen/space_20"
+        android:imeOptions="actionSearch"/>
+
+</LinearLayout>

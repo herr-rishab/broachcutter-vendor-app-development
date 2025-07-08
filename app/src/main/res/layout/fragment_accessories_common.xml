@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/accessories_common_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_two"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_25"
+            android:paddingBottom="@dimen/space_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/accessories_common_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_15"
+                android:layout_marginRight="@dimen/space_15"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:text="@string/common_accessories"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.valartech.loadinglayout.LoadingLayout
+                android:id="@+id/accessories_common_recycler_view_loading_loayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:default_state="complete">
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:tag="@string/ll_loading" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/accessories_common_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/space_15"
+                    android:tag="@string/ll_complete"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tool:listitem="@layout/accessories_common_list_item"
+                    tool:orientation="horizontal" />
+            </com.valartech.loadinglayout.LoadingLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accessories_model_wise_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="@string/model_wise_accessories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accessories_common_container" />
+
+        <!-- CUB & CUB Auto -->
+        <TextView
+            android:id="@+id/cub_and_cub_auto_accessories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:text="@string/cub_and_cub_auto_accessories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accessories_model_wise_title" />
+
+        <com.valartech.loadinglayout.LoadingLayout
+            android:id="@+id/cub_and_cub_auto_accessories_common_recycler_view_loading_loayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:default_state="complete"
+            android:minHeight="@dimen/accessories_card_height"
+            app:layout_constraintTop_toBottomOf="@+id/cub_and_cub_auto_accessories_title">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:tag="@string/ll_loading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cub_and_cub_auto_accessories_common_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_15"
+                android:tag="@string/ll_complete"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tool:listitem="@layout/accessories_model_wise_list_item"
+                tool:orientation="horizontal" />
+        </com.valartech.loadinglayout.LoadingLayout>
+
+        <!-- SUPER -->
+        <TextView
+            android:id="@+id/super_accessories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:text="@string/super_accessories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cub_and_cub_auto_accessories_common_recycler_view_loading_loayout" />
+
+        <com.valartech.loadinglayout.LoadingLayout
+            android:id="@+id/super_accessories_common_recycler_view_loading_loayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:default_state="complete"
+            android:minHeight="@dimen/accessories_card_height"
+            app:layout_constraintTop_toBottomOf="@+id/super_accessories_title">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:tag="@string/ll_loading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/super_accessories_common_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_15"
+                android:tag="@string/ll_complete"
+                android:minHeight="@dimen/accessories_card_height"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tool:listitem="@layout/accessories_model_wise_list_item"
+                tool:orientation="horizontal" />
+        </com.valartech.loadinglayout.LoadingLayout>
+
+        <!-- TRIDENT -->
+        <TextView
+            android:id="@+id/trident_accessories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:text="@string/trident_accessories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/super_accessories_common_recycler_view_loading_loayout" />
+
+        <com.valartech.loadinglayout.LoadingLayout
+            android:id="@+id/trident_accessories_common_recycler_view_loading_loayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:default_state="complete"
+            android:minHeight="@dimen/accessories_card_height"
+            app:layout_constraintTop_toBottomOf="@+id/trident_accessories_title">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:tag="@string/ll_loading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trident_accessories_common_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_15"
+                android:tag="@string/ll_complete"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tool:listitem="@layout/accessories_model_wise_list_item"
+                tool:orientation="horizontal" />
+        </com.valartech.loadinglayout.LoadingLayout>
+
+        <!-- TITAN -->
+        <TextView
+            android:id="@+id/titan_accessories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:text="@string/titan_accessories"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trident_accessories_common_recycler_view_loading_loayout" />
+
+
+        <com.valartech.loadinglayout.LoadingLayout
+            android:id="@+id/titan_accessories_common_recycler_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:default_state="complete"
+            android:minHeight="@dimen/accessories_card_height"
+            app:layout_constraintTop_toBottomOf="@+id/titan_accessories_title">
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:tag="@string/ll_loading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/titan_accessories_common_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_10"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_15"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tool:listitem="@layout/accessories_model_wise_list_item"
+                tool:orientation="horizontal" />
+        </com.valartech.loadinglayout.LoadingLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

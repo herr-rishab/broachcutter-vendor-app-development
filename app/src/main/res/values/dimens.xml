@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_outer_padding">@dimen/_24sdp</dimen>
+    <dimen name="screen_title">@dimen/_24sdp</dimen>
+
+    <dimen name="space_10">@dimen/_10sdp</dimen>
+    <dimen name="space_20">@dimen/_20sdp</dimen>
+    <dimen name="space_5">@dimen/_5sdp</dimen>
+    <dimen name="space_12">@dimen/_12sdp</dimen>
+    <dimen name="space_15">@dimen/_15sdp</dimen>
+    <dimen name="rounded_button_corner_radius">2.5dp</dimen>
+    <dimen name="card_corner_radius">7.5dp</dimen>
+    <dimen name="product_card_height">@dimen/_165sdp</dimen>
+    <dimen name="space_30">@dimen/_30sdp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="pending_order_button_height">@dimen/_38sdp</dimen>
+    <dimen name="pending_button_margin">@dimen/space_20</dimen>
+    <dimen name="cutter_item_height">@dimen/_39sdp</dimen>
+    <dimen name="s_16">@dimen/_16ssp</dimen>
+    <dimen name="s_12">@dimen/_12ssp</dimen>
+    <dimen name="space_25">@dimen/_25sdp</dimen>
+    <dimen name="d_1">@dimen/_1sdp</dimen>
+    <dimen name="d_5">@dimen/_5sdp</dimen>
+    <dimen name="d_24">@dimen/_24sdp</dimen>
+    <dimen name="d_10">@dimen/_10sdp</dimen>
+    <dimen name="d_2">@dimen/_2sdp</dimen>
+    <dimen name="d_177">@dimen/_177sdp</dimen>
+    <dimen name="s_20">@dimen/_20ssp</dimen>
+    <dimen name="accessories_card_height">@dimen/_149sdp</dimen>
+    <dimen name="order_summary_height">112dp</dimen>
+
+</resources>

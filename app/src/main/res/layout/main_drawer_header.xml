@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/diagonal_red_blue_gradient"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    android:gravity="bottom"
+    >
+
+    <TextView
+        android:id="@+id/dealerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:lineSpacingExtra="2sp"
+        tools:text="Supreme Dealer - Chengalpattu"
+        android:fontFamily="@font/proxima_nova_alt_bold"
+        android:paddingBottom="@dimen/space_20"
+        />
+
+    <TextView
+        android:id="@+id/dealerCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:lineSpacingExtra="6sp"
+        tools:text="Available Credit limit: Rs. 2,00,000"
+        android:paddingBottom="@dimen/space_10"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        />
+
+</LinearLayout>

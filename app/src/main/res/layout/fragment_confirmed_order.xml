@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.valartech.loadinglayout.LoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/confirmed_order_loading_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:default_state="complete"
+    tools:context=".screens.my_order_history.OrderFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_confirmed_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="@string/ll_complete"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/list_item_orders_summary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/marine"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:tag="@string/ll_empty">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_empty" />
+
+        <TextView
+            android:id="@+id/tv_no_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8ssp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+</com.valartech.loadinglayout.LoadingLayout>

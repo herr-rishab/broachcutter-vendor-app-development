@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/footerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space_20"
+    android:paddingLeft="@dimen/space_30"
+    android:paddingRight="@dimen/space_30"
+    tools:background="@drawable/black_white_gradient"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <TextView
+        android:id="@+id/subtotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23.5dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:text="@string/subtotal"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtotalAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/subtotalLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Rs. 5,47,091" />
+
+    <TextView
+        android:id="@+id/couponDiscountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.5dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:text="@string/coupon_discount"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtotalLabel" />
+
+    <TextView
+        android:id="@+id/couponDiscountAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/couponDiscountLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Rs. 47,091" />
+
+    <TextView
+        android:id="@+id/totalDiscountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.5dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/couponDiscountLabel"
+        android:text="@string/total_discount" />
+
+    <TextView
+        android:id="@+id/taxItemAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/taxItemLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Rs. 21,200" />
+
+    <TextView
+        android:id="@+id/taxItemLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.5dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalDiscountLabel"
+        tools:text="GST @ 18%" />
+
+    <TextView
+        android:id="@+id/totalDiscountAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:letterSpacing="0.01"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@id/totalDiscountLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Rs. 21,200" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/proxima_nova_alt_black"
+        android:text="@string/total_caps"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taxItemAmt" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_alt_black"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/totalLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Rs. 6,20,102" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/dashBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="subtotalAmt,taxItemAmt" />
+
+    <ImageView
+        android:id="@+id/subtotalDashes"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="7dp"
+        android:layerType="software"
+        android:src="@drawable/white_dashes"
+        app:layout_constraintBottom_toBottomOf="@id/subtotalLabel"
+        app:layout_constraintLeft_toRightOf="@id/subtotalLabel"
+        app:layout_constraintRight_toLeftOf="@id/dashBarrier"
+        app:layout_constraintTop_toTopOf="@id/subtotalLabel" />
+
+    <ImageView
+        android:id="@+id/taxItemDashes"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="7dp"
+        android:layerType="software"
+        android:src="@drawable/white_dashes"
+        app:layout_constraintBottom_toBottomOf="@id/taxItemLabel"
+        app:layout_constraintLeft_toRightOf="@id/taxItemLabel"
+        app:layout_constraintRight_toLeftOf="@id/dashBarrier"
+        app:layout_constraintTop_toTopOf="@id/taxItemLabel" />
+
+
+    <ImageView
+        android:id="@+id/couponDiscountDashes"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="7dp"
+        android:layerType="software"
+        android:src="@drawable/white_dashes"
+        app:layout_constraintBottom_toBottomOf="@id/couponDiscountLabel"
+        app:layout_constraintLeft_toRightOf="@id/couponDiscountLabel"
+        app:layout_constraintRight_toLeftOf="@id/dashBarrier"
+        app:layout_constraintTop_toTopOf="@id/couponDiscountLabel" />
+
+    <ImageView
+        android:id="@+id/totalDiscountDashes"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="7dp"
+        android:layerType="software"
+        android:src="@drawable/white_dashes"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/totalDiscountLabel"
+        app:layout_constraintLeft_toRightOf="@id/totalDiscountLabel"
+        app:layout_constraintRight_toLeftOf="@id/dashBarrier"
+        app:layout_constraintTop_toTopOf="@id/totalDiscountLabel" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/couponDiscountLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="couponDiscountAmt, couponDiscountDashes, couponDiscountLabel" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/taxLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="taxItemLabel, taxItemAmt, taxItemDashes" />
+
+</merge>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/marine">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="@string/pending_orders_this_month"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="@dimen/space_15"
+        />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pendingOrdersViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_summary_height"
+        android:layout_marginTop="@dimen/space_15"
+        />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_marginBottom="40dp"
+        />
+    <!--app:ci_drawable="@drawable/viewpager_selected_circle"-->
+    <!--app:ci_drawable_unselected="@drawable/viewpager_deselected_circle"-->
+</LinearLayout>

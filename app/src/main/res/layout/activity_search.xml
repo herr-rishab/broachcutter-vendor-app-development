@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.search.SearchActivity">
+
+    <FrameLayout
+        android:id="@+id/searchViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hori_red_blue_gradient"
+        android:padding="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_rounded_rectangle2"
+            app:closeIcon="@drawable/ic_close_black_24dp"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search_hint"
+            app:searchIcon="@null"
+            android:elevation="2dp"
+            />
+    </FrameLayout>
+
+    <com.valartech.loadinglayout.LoadingLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchViewContainer">
+        <!--loading-->
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+        <!--complete-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/search_result_item"
+            />
+        <!--empty-->
+        <include layout="@layout/search_no_results" />
+    </com.valartech.loadinglayout.LoadingLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

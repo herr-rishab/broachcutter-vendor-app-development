@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_12sdp"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/new_offers_and_schemes_available"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTitle"
+                app:srcCompat="@drawable/ic_coupon_dialog_cross" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCouponBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:listitem="@layout/item_coupon_offer_banner" />
+
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/recyclerViewIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:spi_dotSize="@dimen/_8sdp"
+                app:spi_dotSelectedSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/rvCouponBanner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spi_dotColor="@color/warm_grey_eight"
+                app:spi_dotSelectedColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_2sdp"
+                android:text="@string/view_details"
+                android:textColor="@color/twilight_blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btnAddToCart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCouponBanner"
+                app:layout_constraintTop_toTopOf="@id/btnAddToCart"
+                app:layout_constraintWidth_percent="0.6" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewDetails_coupon_product_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/view_details"
+                android:textColor="@color/twilight_blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvCouponBanner"
+                app:layout_constraintWidth_percent="0.6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddToCart"
+                style="@style/RedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_11sdp"
+                android:backgroundTint="@color/twilight_blue"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:text="@string/add_to_cart"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tvViewDetails"
+                app:iconPadding="@dimen/_10sdp"
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_coupon_dialog_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvCouponBanner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.valartech.loadinglayout.LoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cartLoadingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:default_state="complete"
+    app:overlay_tint="@color/black_50"
+    tools:context=".screens.cart.view.CartFragment">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:tag="@string/ll_loading" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="@string/ll_complete"
+        >
+        <include
+            android:id="@+id/banner"
+            layout="@layout/list_item_cart_header_warning" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/banner"
+            tools:listitem="@layout/list_item_cart_product" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkout"
+            style="@style/MaterialButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="@dimen/space_15"
+            android:text="@string/checkout"
+            android:textColor="@color/checkout_button_selector"
+            android:textSize="18sp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="7.5dp"
+            app:fontFamily="@font/proxima_nova_alt_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <include
+            android:id="@+id/orderPlacedLoadingLayout"
+            layout="@layout/order_placing_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginRight="@dimen/space_15"
+        android:tag="@string/ll_empty">
+
+        <ImageView
+            android:id="@+id/shoppingCart"
+            android:layout_width="84dp"
+            android:layout_height="76dp"
+            android:src="@drawable/empty_shopping_cart"
+            app:layout_constraintBottom_toTopOf="@id/emptyCartTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/emptyCartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_30"
+            android:gravity="center_horizontal"
+            android:text="@string/empty_cart_title"
+            android:textColor="@color/brownish_grey_two"
+            android:textSize="25sp"
+            app:fontFamily="@font/proxima_nova_semibold"
+            app:layout_constraintBottom_toTopOf="@id/emptyCartDesc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoppingCart" />
+
+        <TextView
+            android:id="@+id/emptyCartDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:gravity="center"
+            android:text="@string/empty_cart_desc"
+            android:textColor="@color/greyish"
+            android:textSize="16sp"
+            app:fontFamily="@font/proxima_nova_alt_regular"
+            app:layout_constraintBottom_toTopOf="@id/backButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emptyCartTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/back_to_products"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:backgroundTint="@color/burnt_red"
+            app:cornerRadius="5dp"
+            app:fontFamily="@font/proxima_nova_alt_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emptyCartDesc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.valartech.loadinglayout.LoadingLayout>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/accessories_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/accessories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="@string/accessories"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pilot_pins_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_15"
+            android:background="@drawable/home_cutters_bg"
+            app:cardBackgroundColor="@color/burnt_red"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accessories_title">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/pilot_pins_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/pilot_pins"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/cuttersSubtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/cuttersSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/pilot_pins_for_each_size_of_cutter"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/pilot_pins_title"
+                    app:layout_constraintTop_toBottomOf="@+id/pilot_pins_title" />
+
+                <ImageView
+                    android:id="@+id/tctBg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="@dimen/space_10"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_tct"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/tctBgSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="@dimen/space_10"
+                    android:paddingEnd="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_tct_small"
+                    app:layout_constraintRight_toLeftOf="@id/tctBg"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/common_model_wise_layout"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_15"
+            android:background="@drawable/home_accessories_bg"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/black_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pilot_pins_Layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/common_model_wise_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/common_and_model_wise_accessories"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/common_model_wise_subtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/common_model_wise_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/accessories_for_all_our_machines"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/common_model_wise_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="@dimen/space_15"
+                    android:src="@drawable/home_accessories_bg2"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/arbors_extensions_layout"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_15"
+            android:background="@drawable/home_accessories_bg"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/black_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/common_model_wise_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/arbors_extensions_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/arbors_extensions"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/arbors_extensions_subtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/arbors_extensions_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/accessories_for_all_our_machines"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/arbors_extensions_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="@dimen/space_15"
+                    android:src="@drawable/home_accessories_bg2"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/shank_adapters_layout"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_15"
+            android:background="@drawable/home_accessories_bg"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/black_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arbors_extensions_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/shank_adapters_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/adaptors_for_different_shank_types"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/shank_adapters_subtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/shank_adapters_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/use_different_shank_types_with_the_same_machine"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shank_adapters_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="@dimen/space_15"
+                    android:src="@drawable/home_accessories_bg2"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/radial_drilling_arbor_layout"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_15"
+            android:background="@drawable/home_accessories_bg"
+            android:paddingStart="13dp"
+            app:cardBackgroundColor="@color/black_two"
+            app:cardCornerRadius="4dp"
+            app:contentPaddingLeft="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shank_adapters_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/radial_drilling_arbor_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/arbors_for_radial_drilling_machines"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/radial_drilling_arbor_subtitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/radial_drilling_arbor_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_thin"
+                    android:text="@string/radial_drilling_machine_specific_arbors"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radial_drilling_arbor_title" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="@dimen/space_15"
+                    android:src="@drawable/home_accessories_bg2"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

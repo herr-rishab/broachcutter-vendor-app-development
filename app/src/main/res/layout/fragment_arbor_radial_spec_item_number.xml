@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    tools:context=".screens.cutters.part_number.CutterPartNumberFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/arbor_extension_item_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:labelFor="@id/numberEntry"
+                android:text="@string/item_number_of_the_arbor"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/arbor_extension_item_number_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@drawable/white_rounded_rectangle5"
+                android:fontFamily="@font/proxima_nova_alt_regular"
+                android:hint="@string/enter_number_here"
+                android:imeOptions="actionSearch"
+                android:inputType="number"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arbor_extension_item_number_label"
+                tools:text="2000199902" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/arbor_search"
+        style="@style/RedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_20"
+        android:text="@string/search_for_arbor" />
+</LinearLayout>

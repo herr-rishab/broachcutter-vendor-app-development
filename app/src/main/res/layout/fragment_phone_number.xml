@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/diagonal_red_blue_gradient"
+    tools:context=".screens.login.phone_number.LinkPhoneNumberFragment">
+
+    <include layout="@layout/login_cutter_bg" />
+
+    <TextView
+        android:id="@+id/phoneNumberTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="35dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="@string/welcome_to_the_broachcutter_dealer_app"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/phoneNumberDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_15"
+        android:fontFamily="@font/proxima_nova_alt_regular"
+        android:text="@string/phone_number_linking_help"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/phoneNumberTitle"
+        app:layout_constraintRight_toRightOf="@id/phoneNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneNumberLayout"
+        style="@style/LoginInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_30"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="@dimen/space_30"
+        android:hint="@string/enter_your_mobile_number"
+        android:textColorHint="@color/white_50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberDescription"
+        app:prefixText="+91"
+        app:prefixTextAppearance="@style/PhonePrefixTextAppearance"
+        app:prefixTextColor="@color/white_50">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneNumber"
+            style="@style/LoginInputTextbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center|start"
+            android:inputType="phone"
+            tools:text="1231233123" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Space
+        android:id="@+id/spaceAbove"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        style="@style/WhiteButton"
+        android:layout_width="220dp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="@string/confirm_number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spaceAbove"
+        app:layout_constraintVertical_bias="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

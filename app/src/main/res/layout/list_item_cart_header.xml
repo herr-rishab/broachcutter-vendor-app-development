@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/black"
+        android:text="@string/my_cart"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="@dimen/space_15"
+        />
+
+    <TextView
+        android:id="@+id/deliveryAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/brownish_grey_two"
+        android:text="@string/what_is_my_delivery_address"
+        android:layout_gravity="bottom"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:paddingBottom="2dp"
+        android:paddingRight="@dimen/space_15"
+        />
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".screens.account.AccountInfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@string/account_information"
+            android:layout_marginTop="@dimen/space_20"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            android:layout_marginLeft="@dimen/space_15" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space_15"
+            android:paddingRight="@dimen/space_15"
+            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/space_20">
+
+            <include
+                android:id="@+id/accountDetailsCard"
+                layout="@layout/account_details_card" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@string/saved_addresses"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_20" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/space_15"
+            android:paddingLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_20"
+            android:clipToPadding="false">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/white_two">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/space_15"
+                    android:orientation="vertical">
+                    <!--<TextView-->
+                    <!--android:id="@+id/dealerAddressTitle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--tools:text="Timken India Ltd - Chennai "-->
+                    <!--android:fontFamily="@font/proxima_nova_semibold"-->
+                    <!--/>-->
+                    <TextView
+                        android:id="@+id/dealerAddressDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/warm_grey_two"
+                        tools:text="Plot No. AA3, 6th Avenue, Auto Ancillary SEZ, Mahindra World City, Anjur Village, PO-Nattam,
+Chengalpatt 603002,Tamil Nadu." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@string/account_actions"
+            android:fontFamily="@font/proxima_nova_alt_bold"
+            android:layout_marginLeft="@dimen/space_15"
+            android:layout_marginTop="@dimen/space_20" />
+
+        <TextView
+            android:id="@+id/signOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/sign_out"
+            android:padding="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:background="@color/white_five"
+            android:layout_marginTop="@dimen/space_15" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/greyish_brown_two" />
+
+        <TextView
+            android:id="@+id/resetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/reset_account_password"
+            android:padding="@dimen/space_15"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:background="@color/white_five" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/greyish_brown_two" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,21 @@
+spotless {
+    kotlin {
+        target '**/*.kt'
+        toggleOffOn()
+        ktlint('0.41.0').userData(['disabled_rules': 'no-wildcard-imports'])
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+}
+
+tasks.register('createSpotlessPreCommitHook') {
+    def gitHooksDirectory = new File("$project.rootDir/.git/hooks/")
+    if (!gitHooksDirectory.exists()) gitHooksDirectory.mkdirs()
+    new File("$project.rootDir/.git/hooks", "pre-commit").text = """
+    #!/bin/bash
+    echo "Running spotless check"
+    ./gradlew spotlessApply
+"""
+    "chmod +x .git/hooks/pre-commit".execute()
+}

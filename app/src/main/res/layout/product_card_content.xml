@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_root"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/d_177"
+    tools:background="@color/black_two">
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_20"
+        android:maxHeight="165dp"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/home_accessories_icon" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_marginEnd="@dimen/space_10"
+        android:fontFamily="@font/proxima_nova_alt_bold"
+        android:maxLines="4"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quantitySpinner"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CUB Auto Magnetic Base Drilling Machine" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/description"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="17sp"-->
+    <!--android:textColor="@color/white"-->
+    <!--tools:text="⌀ 36mm x 50mm"-->
+    <!--app:layout_constraintLeft_toLeftOf="@id/name"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/name"-->
+    <!--android:fontFamily="@font/proxima_nova_alt_bold" />-->
+
+    <TextView
+        android:id="@+id/articleNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_10"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/s_12"
+        app:layout_constraintLeft_toLeftOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="Article Number: 900002" />
+
+    <ImageView
+        android:id="@+id/closeProductModal"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:paddingTop="13dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_close_white_24dp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/quantityLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quantityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="14dp"
+        android:text="@string/quantity"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
+
+    <Spinner
+        android:id="@+id/quantitySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_marginBottom="@dimen/space_20"
+        android:background="@null"
+        android:minWidth="60dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/qty_addToCart_container"
+        app:layout_constraintRight_toRightOf="@id/quantityLabel"
+        app:layout_constraintTop_toBottomOf="@id/quantityLabel"
+        app:layout_constraintVertical_bias="0" />
+
+
+    <LinearLayout
+        android:id="@+id/qty_addToCart_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginEnd="@dimen/space_15"
+        android:layout_marginBottom="@dimen/space_15"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/space_15"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <net.broachcutter.vendorapp.views.ElegantNumberButton
+            android:id="@+id/product_number_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            app:textSize="8sp"
+            tools:ignore="SmallSp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addToCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            style="@style/CartButton"
+            android:text="@string/add_to_cart_caps"
+            android:textColor="@color/twilight_blue"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/soft_blue_two"
+            app:strokeWidth="@dimen/d_2"
+            app:cornerRadius="@dimen/d_5"
+            app:icon="@drawable/ic_cart"
+            app:iconTint="@color/twilight_blue"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/d_24"
+            app:iconPadding="@dimen/d_10"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

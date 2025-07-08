@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/space_5"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_marginBottom="@dimen/space_5"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/home_image"
+            android:layout_width="155dp"
+            android:layout_height="160dp"
+            android:src="@drawable/home_machines_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/tomato"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/space_5"
+            />
+
+        <TextView
+            android:id="@+id/home_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/space_5"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:maxLines="2"
+            tools:text="@string/magnetic_drilling_machines"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/light_navy"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

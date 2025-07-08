@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/diameterLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/diameter_mm"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeOfCutterSpinner" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/diameterEntry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cutter_item_height"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/white_rounded_rectangle5"
+            android:fontFamily="@font/proxima_nova_alt_regular"
+            android:hint="@string/enter_diameter_here"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingLeft="@dimen/space_10"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/diameterLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/space_10"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="@string/mm"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:paddingTop="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/diameterEntry"
+            app:layout_constraintRight_toRightOf="@id/diameterEntry"
+            app:layout_constraintTop_toTopOf="@id/diameterEntry" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="@string/cutter_material"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_marginTop="@dimen/space_15"
+        />
+
+    <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+        android:id="@+id/cutterMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cutter_item_height"
+        android:layout_marginTop="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_of_cutter_label">
+
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/tctButton"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:tag=""
+            android:text="@string/tct_caps" />
+
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/hssButton"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/hss_caps" />
+
+
+    </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="@string/depth_of_cut_mm"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_marginTop="@dimen/space_15"
+        />
+
+    <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+        android:id="@+id/depthOfCutGroup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cutter_item_height"
+        android:layout_marginTop="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_of_cutter_label">
+
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/doc25"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doc_25" />
+
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/doc35"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doc_35" />
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/doc50"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doc_50" />
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/doc75"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doc_75" />
+        <net.broachcutter.vendorapp.views.FlatRadioButton
+            android:id="@+id/doc100"
+            style="@style/FlatRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doc_100" />
+
+
+    </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+</merge>

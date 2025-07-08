@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.order_history.detail.OrderDetailFragment">
+
+    <TextView
+        android:id="@+id/orderNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Order #1002991002901" />
+
+    <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/brownish_grey_two"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        tools:text="Order Placed on 25/12/2020 at 7:30pm"
+        app:layout_constraintStart_toStartOf="@+id/orderNumberText"
+        app:layout_constraintTop_toBottomOf="@+id/orderNumberText" />
+
+    <TextView
+        android:id="@+id/tv_confirmation_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/brownish_grey_two"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_order_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_time"
+        tools:text="Order confirmed on 25/12/2020" />
+
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/paymentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_15"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textColor="@color/burnt_red"
+        android:textSize="15sp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_confirmation_date"
+        tools:text="Payment: Pending from Dealer" />
+
+
+    <ImageView
+        android:id="@+id/backgroundWaveTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:src="@drawable/blue_wave_top"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTitle" />
+
+    <View
+        android:id="@+id/backgroundBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/marine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backgroundWaveTop" />
+
+    <LinearLayout
+        android:id="@+id/orderItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space_15"
+        android:paddingTop="2dp"
+        android:paddingRight="@dimen/space_15"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTitle">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

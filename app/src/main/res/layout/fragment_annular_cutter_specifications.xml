@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_15"
+    tools:context=".screens.annular.specifications.AnnularCutterSpecificationFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@color/white_two"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:contentPadding="@dimen/space_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/type_of_cutter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/what_type_of_cutter"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/typeOfAnnularCutterSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="3.5dp"
+                android:background="@null"
+                app:layout_constraintTop_toBottomOf="@id/type_of_cutter_label" />
+
+            <TextView
+                android:id="@+id/weldon_cutter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingTop="@dimen/space_15"
+                android:text="@string/shank_type"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeOfAnnularCutterSpinner" />
+
+            <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+                android:id="@+id/shankGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weldon_cutter_label">
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/weldon"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/weldon" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/universal"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/universal" />
+
+            </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+            <TextView
+                android:id="@+id/diameter_cutter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingTop="@dimen/space_15"
+                android:text="@string/diameter_of_cutter"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shankGroup" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/diameterOfCutterEditContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.5dp"
+                android:background="@drawable/white_rounded_rectangle5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/diameter_cutter_label">
+
+                <EditText
+                    android:id="@+id/diameterOfCutterEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cutter_item_height"
+                    android:inputType="numberDecimal"
+                    tools:text="22"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="@dimen/_12ssp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_15"
+                    android:background="@color/transparent"
+                    android:text="@string/mm"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/depth_of_cut_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_15"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/depth_of_cut_mm"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diameterOfCutterEditContainer" />
+
+            <net.broachcutter.vendorapp.views.FlatRadioButtonGroup
+                android:id="@+id/depthOfCutGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cutter_item_height"
+                android:layout_marginTop="6dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/depth_of_cut_label">
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc25"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_35" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc50"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_50" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc75"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_75" />
+
+                <net.broachcutter.vendorapp.views.FlatRadioButton
+                    android:id="@+id/doc100"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/doc_100" />
+            </net.broachcutter.vendorapp.views.FlatRadioButtonGroup>
+
+            <LinearLayout
+                android:id="@+id/cutterLayoutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/diameterOfCutterEditContainer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cutterSearch"
+        style="@style/RedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_20"
+        android:enabled="false"
+        android:text="@string/search_for_cutter"
+        />
+
+</LinearLayout>
